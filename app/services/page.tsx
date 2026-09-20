@@ -1,32 +1,5 @@
-import type { Metadata } from "next";
-import { Check } from "lucide-react";
-import { services } from "@/lib/site";
-import { Button } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "Services",
-  description: "Explore LIXIANG Trade capabilities for global product programs, sourcing coordination, and commercial partnerships."
-};
-
-export default function ServicesPage() {
-  return (
-    <section className="bg-white py-16">
-      <div className="container-page">
-        <p className="eyebrow text-wine">Capabilities</p>
-        <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-tight">Capabilities organized around how product programs move forward.</h1>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {services.map((service) => (
-            <div key={service} className="rounded-lg border border-ink/10 bg-pearl p-6">
-              <Check className="text-wine" />
-              <h2 className="mt-4 text-xl font-bold">{service}</h2>
-              <p className="mt-3 text-sm leading-6 text-ink/65">
-                A product-oriented framework for moving from initial interest to a clear, qualified conversation about requirements and commercial fit.
-              </p>
-            </div>
-          ))}
-        </div>
-        <Button href="/contact" className="mt-9">Start an Inquiry</Button>
-      </div>
-    </section>
-  );
-}
+import type {Metadata} from "next";
+import {Check} from "lucide-react";
+import {services} from "@/lib/site";
+export const metadata:Metadata={title:"Capabilities",description:"LIXIANG Trade sourcing, assortment, packaging, sampling, distribution, and supply coordination capabilities."};
+export default function ServicesPage(){return <section className="bg-[#f4f0e8] py-24 sm:py-32"><div className="container-page"><div className="grid gap-10 border-b-2 border-black pb-12 lg:grid-cols-[.65fr_1.35fr]"><div><p className="eyebrow text-[#1746a2]">Capability ledger / 06</p><h1 className="mt-5 text-6xl font-black uppercase leading-[.86] sm:text-8xl">Trade work, clearly assigned.</h1></div><p className="max-w-xl self-end text-lg leading-8 text-black/60">A modular set of services for buyers, suppliers, distributors, and partners building a focused product program.</p></div><div className="mt-12 border-t-2 border-black">{services.map((service,index)=><article key={service} className="grid gap-4 border-b border-black/30 py-6 sm:grid-cols-[5rem_1fr_1fr_auto] sm:items-center"><p className="mono text-xs text-[#f04b35]">LX-{String(index+1).padStart(2,"0")}</p><h2 className="text-xl font-black uppercase">{service}</h2><p className="text-sm leading-6 text-black/55">Scoped around the product brief, target channel, readiness, and commercial timing.</p><Check className="text-[#1746a2]" size={18}/></article>)}</div></div></section>}

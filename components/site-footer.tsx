@@ -1,41 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
-import { navItems, site } from "@/lib/site";
+import {ArrowUpRight} from "lucide-react";
+import {navItems,site} from "@/lib/site";
 
-export function SiteFooter() {
-  return (
-    <footer className="border-t border-ink/10 bg-ink text-white">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
-        <div>
-          <p className="font-serif text-2xl font-bold">{site.name}</p>
-          <p className="mt-4 max-w-md text-sm leading-6 text-white/70">
-            An Ontario corporation positioned for global product programs, sourcing coordination, and commercial partnerships.
-          </p>
-        </div>
-        <div>
-          <p className="text-sm font-bold uppercase tracking-widest text-white/60">Explore</p>
-          <div className="mt-4 grid gap-2 text-sm text-white/75">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-white">
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white">Terms</Link>
-          </div>
-        </div>
-        <div>
-          <p className="text-sm font-bold uppercase tracking-widest text-white/60">Contact</p>
-          <div className="mt-4 grid gap-3 text-sm text-white/75">
-            <a className="flex gap-2 hover:text-white" href={`mailto:${site.email}`}><Mail size={16} />{site.email}</a>
-            <a className="flex gap-2 hover:text-white" href={`tel:${site.phoneHref}`}><Phone size={16} />{site.phone}</a>
-            <p className="flex gap-2"><MapPin size={16} />Based in {site.address.city}</p>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-white/50">
-        © 2026 {site.legalName}. All rights reserved.
-      </div>
-    </footer>
-  );
-}
+export function SiteFooter(){return <footer className="border-t-2 border-black bg-[#f4f0e8] py-10"><div className="container-page"><div className="grid gap-10 border-b border-black pb-10 md:grid-cols-[1.2fr_.8fr]"><div><p className="text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[.78]">Lixiang<br/><span className="text-[#f04b35]">Trade</span></p></div><div className="self-end md:text-right"><p className="eyebrow">Product programs / Ontario</p><a href={`mailto:${site.email}`} className="mt-5 inline-flex items-center gap-3 border-b-2 border-[#1746a2] pb-2 font-bold text-[#1746a2]">{site.email}<ArrowUpRight size={17}/></a><p className="mt-4 text-sm text-black/55">{site.phone}<br/>{site.address.city}, Canada</p></div></div><div className="flex flex-col justify-between gap-6 pt-7 text-xs text-black/55 md:flex-row"><div className="flex flex-wrap gap-5">{navItems.map(item=><Link key={item.href} href={item.href} className="hover:text-[#f04b35]">{item.label}</Link>)}<Link href="/privacy-policy">Privacy</Link><Link href="/terms">Terms</Link></div><p>© 2026 {site.legalName}</p></div></div></footer>}

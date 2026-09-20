@@ -1,32 +1,5 @@
 import Link from "next/link";
-import { Boxes } from "lucide-react";
-import { navItems, site } from "@/lib/site";
-import { Button } from "@/components/ui/button";
+import {ArrowUpRight} from "lucide-react";
+import {navItems} from "@/lib/site";
 
-export function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-pearl/90 backdrop-blur">
-      <div className="container-page flex min-h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2 font-serif text-xl font-bold text-ink">
-          <span className="grid size-9 place-items-center rounded-md bg-wine text-white">
-            <Boxes size={19} aria-hidden="true" />
-          </span>
-          {site.name}
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm font-semibold text-ink/75 md:flex">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-wine">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <Button href="/contact" className="hidden md:inline-flex">
-          Partner Inquiry
-        </Button>
-        <Button href="/contact" variant="secondary" className="md:hidden">
-          Contact
-        </Button>
-      </div>
-    </header>
-  );
-}
+export function SiteHeader(){return <header className="relative z-50 border-b-2 border-black bg-[#f4f0e8]"><div className="container-page grid min-h-[76px] grid-cols-[1fr_auto] items-center md:grid-cols-[14rem_1fr_auto]"><Link href="/" className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center bg-[#f04b35] text-sm font-black text-white">LX</span><span className="text-sm font-black uppercase leading-4 tracking-[.12em]">Lixiang<br/>Trade</span></Link><nav className="hidden justify-center gap-8 md:flex">{navItems.slice(1,4).map(item=><Link key={item.href} href={item.href} className="eyebrow transition hover:text-[#f04b35]">{item.label}</Link>)}</nav><Link href="/contact" className="inline-flex items-center gap-2 border-2 border-black px-4 py-3 text-[.62rem] font-black uppercase tracking-[.14em] transition hover:bg-[#1746a2] hover:text-white">Send a brief <ArrowUpRight size={14}/></Link></div></header>}

@@ -18,7 +18,11 @@ export const products = [
   { name: "Home & Living", category: "Home Programs", image: "/images/home-living.png", description: "Home-oriented product directions for buyers, distributors, and partners developing thoughtful living assortments.", tags: ["Home", "Lifestyle", "Wholesale"] },
   { name: "Seasonal Programs", category: "Retail Moments", image: "/images/seasonal-programs.png", description: "Flexible product concepts that can be shaped around seasonal retail moments, campaigns, and channel requirements.", tags: ["Seasonal", "Campaigns", "Retail"] },
   { name: "Packaging Development", category: "Brand Readiness", image: "/images/packaging-development.png", description: "A focused discussion around presentation, samples, packaging considerations, and private-label project preparation.", tags: ["Packaging", "Samples", "Private Label"] },
-  { name: "Supply Coordination", category: "Operational Flow", image: "/images/supply-coordination.png", description: "Clear, partner-led conversations for coordinating supply requirements, shipment planning, and commercial timelines.", tags: ["Supply", "Coordination", "Trade"] }
+  { name: "Supply Coordination", category: "Operational Flow", image: "/images/supply-coordination.png", description: "Clear, partner-led conversations for coordinating supply requirements, shipment planning, and commercial timelines.", tags: ["Supply", "Coordination", "Trade"] },
+  { name: "Travel Essentials", category: "Mobility", image: "/images/travel-essentials.png", description: "Coordinated luggage and travel accessory programs prepared for retail and distribution opportunities.", tags: ["Travel", "Accessories", "Retail"] },
+  { name: "Pet Care Collection", category: "Pet Lifestyle", image: "/images/pet-care.png", description: "Practical pet care and comfort accessories presented as a cohesive retail-ready assortment.", tags: ["Pet Care", "Lifestyle", "Wholesale"] },
+  { name: "Desk Accessories", category: "Work Essentials", image: "/images/desk-accessories.png", description: "Modern desktop organization, charging, lighting, and productivity accessories for commercial channels.", tags: ["Office", "Technology", "Distribution"] },
+  { name: "Personal Wellness", category: "Wellness", image: "/images/wellness.png", description: "Everyday movement, hydration, rest, and atmosphere products for contemporary wellness programs.", tags: ["Wellness", "Lifestyle", "Programs"] }
 ];
 
 export const services = [

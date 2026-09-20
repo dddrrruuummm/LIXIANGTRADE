@@ -1,28 +1,5 @@
-import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "About",
-  description: "Learn about LIXIANG TRADE CO., LTD., an Ontario corporation positioned for global product programs and sourcing coordination."
-};
-
-export default function AboutPage() {
-  return (
-    <section className="bg-pearl py-16">
-      <div className="container-page grid gap-10 md:grid-cols-2 md:items-center">
-        <div>
-          <p className="eyebrow text-wine">About LIXIANG Trade</p>
-          <h1 className="mt-4 text-5xl font-bold leading-tight">A clear corporate base for product-led trade collaboration.</h1>
-          <p className="mt-6 leading-8 text-ink/70">
-            LIXIANG TRADE CO., LTD. is an Ontario corporation. Its formation documents establish the corporate entity but do not define a required product category, so this website presents a flexible foundation for product programs, sourcing coordination, and commercial partnerships.
-          </p>
-          <p className="mt-4 leading-8 text-ink/70">
-            Our website presents a professional starting point for prospective buyers, suppliers, distributors, and partners to begin a qualified cross-border product conversation.
-          </p>
-          <Button href="/contact" className="mt-7">Contact the Company</Button>
-        </div>
-        <div className="grid gap-4 rounded-md border border-ink/10 bg-white p-7 shadow-soft"><p className="eyebrow text-wine">Operating Focus</p><p className="text-3xl font-bold leading-tight">Product programs. Sourcing coordination. Practical partnerships.</p><div className="grid gap-4 border-t border-ink/10 pt-6 text-sm leading-6 text-ink/65"><p>Built for buyer, supplier, distribution, and commercial partnership conversations.</p><p>Initial discussions can be tailored around the market, product brief, sourcing needs, and operational context.</p></div></div>
-      </div>
-    </section>
-  );
-}
+import type {Metadata} from "next";
+import Link from "next/link";
+import {ArrowUpRight} from "lucide-react";
+export const metadata:Metadata={title:"About",description:"About LIXIANG Trade and its buyer-led approach to product programs and cross-border coordination."};
+export default function AboutPage(){return <><section className="paper-grid bg-[#f4f0e8] py-24 sm:py-32"><div className="container-page grid gap-12 lg:grid-cols-[.55fr_1.45fr]"><div><p className="eyebrow text-[#f04b35]">Company file / 01</p><div className="barcode mt-8 h-14 w-48"/></div><div><h1 className="max-w-5xl text-6xl font-black uppercase leading-[.86] sm:text-8xl">A trade partner built around the brief.</h1><p className="mt-8 max-w-2xl text-xl leading-8 text-black/60">LIXIANG TRADE CO., LTD. is an Ontario company supporting product sourcing, assortment planning, packaging preparation, and cross-border commercial coordination.</p></div></div></section><section className="bg-[#fffdf7] py-24"><div className="container-page grid gap-6 md:grid-cols-3">{[["01","Buyer led","Programs begin with the market, channel, and commercial need."],["02","Category flexible","Consumer goods and accessories can be shaped around a focused opportunity."],["03","Coordination minded","Product, sample, packaging, and supply conversations stay connected."]].map(([id,title,text])=><article key={id} className="border-2 border-black p-6"><p className="mono text-xs text-[#1746a2]">FILE {id}</p><h2 className="mt-8 text-3xl font-black uppercase">{title}</h2><p className="mt-4 text-sm leading-6 text-black/60">{text}</p></article>)}<Link href="/contact" className="md:col-span-3 mt-4 flex items-center justify-between bg-[#f04b35] px-6 py-5 text-xs font-black uppercase tracking-[.14em] text-white">Send a product brief <ArrowUpRight size={17}/></Link></div></section></>}

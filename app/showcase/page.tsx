@@ -1,27 +1,5 @@
-import type { Metadata } from "next";
-import { ProductCard } from "@/components/product-card";
-import { products } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "Showcase",
-  description: "Explore LIXIANG Trade product program directions for consumer goods, electronics accessories, home, and sourcing coordination."
-};
-
-export default function ShowcasePage() {
-  return (
-    <section className="bg-white py-16">
-      <div className="container-page">
-        <p className="eyebrow text-wine">Product Programs</p>
-        <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-tight">A flexible set of product directions for buyers and partners.</h1>
-        <p className="mt-5 max-w-2xl leading-7 text-ink/70">
-          This showcase presents product directions rather than a live inventory catalog. Visuals and descriptions are intentionally modular, so they can be replaced with supplier-approved photography, SKU information, and final product programs as they are developed.
-        </p>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
-            <ProductCard key={product.name} product={product} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+import type {Metadata} from "next";
+import {ProductCard} from "@/components/product-card";
+import {products} from "@/lib/site";
+export const metadata:Metadata={title:"Product Programs",description:"Explore ten LIXIANG Trade consumer goods, electronics, home, travel, pet, office, wellness, packaging, seasonal, and supply programs."};
+export default function ShowcasePage(){return <section className="paper-grid bg-[#f4f0e8] py-24 sm:py-32"><div className="container-page"><div className="grid min-w-0 gap-10 border-b-2 border-black pb-12 lg:grid-cols-[.65fr_1.35fr]"><div className="min-w-0"><p className="eyebrow text-[#f04b35]">Product manifest / 10</p><h1 className="mt-5 text-5xl font-black uppercase leading-[.86] sm:text-8xl">Ten starting points.</h1></div><p className="min-w-0 max-w-xl self-end text-lg leading-8 text-black/60">Each lot represents a different product direction and uses its own image. Programs can be refined around the buyer, market, packaging, and quantity requirements.</p></div><div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{products.map((product,index)=><ProductCard key={product.name} product={product} index={index}/>)}</div></div></section>}
